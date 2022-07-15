@@ -6,12 +6,14 @@ import React from 'react'
 //importing components
 import About from './components/About';
 import Nav from './components/Nav';
+import Portfolio from './components/Portfolio';
 
 function App() {
   return (
-    <div>
+    <div >
       <Nav></Nav>
       <main>
+        <Portfolio></Portfolio>
         <About></About>
       </main>
     </div>
