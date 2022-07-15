@@ -6,8 +6,8 @@ function About() {
   return (
     <section className='my-5'>
       <h1 id='about'>About Me</h1> 
-      <img src={avatarImg} />
-      <img src={coverImg} />
+      <img alt='a profile avatar' src={avatarImg} />
+      <img  alt='a decorative backdrop' src={coverImg} />
     </section>
   )
 }

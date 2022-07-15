@@ -137,7 +137,7 @@ img {
   max-width: 100%;
 }
 
-span[role="img"] {
+span[role="title"] {
   cursor: default;
 }
 
