@@ -1,9 +1,12 @@
-import React from 'react';
-import projectImg from '../../assets/projects/0.png'
+import React, { useState } from 'react';
+import projectImg0 from '../../assets/projects/0.png'
+import projectImg1 from '../../assets/projects/1.png'
+import projectImg2 from '../../assets/projects/2.png'
+import projectImg3 from '../../assets/projects/3.png'
 
 function Portfolio() {
 
-  const projects = 
+  const [ projects ] = useState(
   [
     {
       index: 0,
@@ -21,9 +24,9 @@ function Portfolio() {
     },
     { 
       index: 2,
-      name: 'Taskinator',
+      name: 'The Animal Quiz',
       url: 'https://isaiasqb.github.io/taskinator/',
-      descrption: 'A To Do list application',
+      descrption: 'A fun quiz about animnals',
       url: '../../assets/projects/2.png'
     },
     { 
@@ -33,7 +36,7 @@ function Portfolio() {
       descrption: 'A task scheduler app',
       url: '../../assets/projects/3.png'
     },
-  ];
+  ]);
 
 
   return (
@@ -41,9 +44,9 @@ function Portfolio() {
       <h1>My Portfolio</h1>
       <p>Some examples of my most recent projects</p>
       <img 
-      src={projectImg}
+      src={projectImg0}
       alt='example of a project'
-      className="img-thumbnail mx-1"
+      className="img-thumbnail mx-1 w-25"
       />
     </section>
   );
