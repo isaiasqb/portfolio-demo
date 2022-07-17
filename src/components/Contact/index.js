@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { validateEmail } from '../../utils/helpers';
 
 
 
@@ -7,9 +8,39 @@ function ContactForm() {
   const [formState, setFormState] = useState({ name: '', email: '', message: ''});
   const { name, email, message } = formState
 
+  //error state hook
+  const [errorMessage, setErrorMessage] = useState('');
+
   function handleChange(e) {
-    //using spread operator to prevent overriding the other two values, email and message
+    //validating email
+    if (e.target.name === 'email') {
+    const isValid = validateEmail(e.target.value);
+    console.log(isValid)
+      // isValid conditional statement
+      if (!isValid) {
+        setErrorMessage('Your email is invalid.');
+      } else {
+        setErrorMessage('');
+      }
+    } else {
+    //validating other fields
+      if (!e.target.value.length) {
+        setErrorMessage(`${e.target.name} is required.`)
+      } else {
+        setErrorMessage('');
+      }
+    }
+    console.log('errorMessage', errorMessage);
+
+    //using spread operator to prevent overriding the other two values that were not selected
+    if (!errorMessage) {
     setFormState({...formState, [e.target.name]: e.target.value})
+    }
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    console.log(formState);
   }
 
   console.log(formState);
@@ -32,7 +63,7 @@ function ContactForm() {
           <input type="email" name="email" defaultValue={email} onChange={handleChange}/>
         </div>
 
-        <button type="submit">Submit</button>
+        <button type="submit" onSubmit={handleSubmit}>Submit</button>
 
       </form>
     </section>
