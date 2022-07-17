@@ -1,26 +1,18 @@
 //  The Nav component will return a single JSX element, the <header>.
-import React, { useState } from 'react';
+import React from 'react';
 
-function renderPortfolio () {
-  console.log('You selected portfolio')
-}
-
-function renderContact () {
-  console.log('You selected contact')
-}
-
-function renderResume () {
-  console.log('You selected resume')
+function categorySelected (name) {
+  console.log(`${name} clicked`)
 }
 
 function Nav() {
 
   const categories = [
     {
-      name: "productivity apps",
+      name: "productivity",
       description: "A few examples of recent apps that I've built, fully functional and guaranteed to boost your productivity.",
     },
-    { name: "miscellaneous apps", 
+    { name: "miscellaneous", 
     description: "A few examples of recent apps that have enjoyment and convenience as the main focus, fully functional and built form scratch" }
   ];
 
@@ -33,25 +25,25 @@ function Nav() {
   </h2>
   <nav>
     <ul className="flex-row">
-      <li className="mx-2">
+      <li className="mx-3">
         <a href="#about">
           About Me
         </a>
       </li>
        {categories.map((category) => (
         <li
-          className="mx-1"
+          className="mx-2"
           key={category.name}
         >
-          <span>
+          <span onClick={categorySelected(category.name)}>
             {category.name}
           </span>
         </li>
       ))}
-        <li>
+        <li li className="mx-3">
           <span>Contact</span>
         </li>
-        <li>
+        <li li className="mx-3">
           <span>Resume</span>
         </li>
     </ul>
