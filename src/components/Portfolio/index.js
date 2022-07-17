@@ -1,11 +1,13 @@
 import React from 'react';
-// import projectImg0 from '../../assets/projects/0.png'
-// import projectImg1 from '../../assets/projects/1.png'
-// import projectImg2 from '../../assets/projects/2.png'
-// import projectImg3 from '../../assets/projects/3.png'
+import { capitalizeFirstLetter } from '../../utils/helpes'
 
-function Portfolio() {
+function Portfolio(props) {
 
+  const currentCategory = {
+    name: "miscellaneous",
+    description:
+      "Examples of my most recent work",
+  };
   // const [ projects ] = useState(
   // [
   //   {
@@ -41,8 +43,8 @@ function Portfolio() {
 
   return (
     <section>
-      <h1>Apps</h1>
-      <p>Some examples of my most recent projects</p>
+      <h1>{capitalizeFirstLetter(currentCategory.name)}</h1>
+      <p>{currentCategory.description}</p>
       <img />
     </section>
   );
