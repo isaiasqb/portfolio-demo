@@ -16,6 +16,8 @@ function App() {
 
   //hook for converting app into an SPA
   const [contactSelected, setContactSelected] = useState(false);
+  const [aboutDefault, setAboutDefault] = useState(true);
+  const [portfolioSelected, setPortfolioSelected] = useState(false);
 
 
   const [categories] = useState([
@@ -37,19 +39,37 @@ function App() {
         currentCategory={currentCategory}
         contactSelected={contactSelected}
         setContactSelected={setContactSelected}
+        aboutDefault={aboutDefault}
+        setAboutDefault={setAboutDefault}
+        portfolioSelected={portfolioSelected}
+        setPortfolioSelected={setPortfolioSelected}
       ></Nav>
       <main>
 
-        {!contactSelected ? (
+      {aboutDefault && (
+        <About></About>
+      )}
+
+      {portfolioSelected && (
+        <Portfolio currentCategory={currentCategory}></Portfolio>
+      )}
+
+      {contactSelected && (
+        <ContactForm></ContactForm>
+      )}
+
+
+
+{/* 
+        {contactSelected ? (
           <>
-            <Portfolio currentCategory={currentCategory}></Portfolio>
-            <About></About>
+          <About></About>
           </>
         ) : (
           <ContactForm></ContactForm>
         )}
 
-
+ */}
 
       </main>
     </div>

@@ -9,7 +9,10 @@ function Nav(props) {
     setCurrentCategory,
     currentCategory,
     contactSelected,
-    setContactSelected
+    setContactSelected,
+    setAboutDefault,
+    setPortfolioSelected,
+
   } = props;
 
   useEffect(() => {
@@ -27,7 +30,11 @@ function Nav(props) {
   <nav>
     <ul className="flex-row">
       <li className="mx-3">
-        <a href="#about" data-testid="about" onClick={() => setContactSelected(false)}>
+        <a href="#about" data-testid="about" onClick={() => { 
+            setPortfolioSelected(false);
+            setContactSelected(false);
+            setAboutDefault(true);
+            }}>
           About Me
         </a>
       </li>
@@ -38,7 +45,9 @@ function Nav(props) {
             <span onClick={() => 
               {
                 setCurrentCategory(category);
+                setPortfolioSelected(true);
                 setContactSelected(false);
+                setAboutDefault(false);
               }}
               >
               {capitalizeFirstLetter(category.name)}
@@ -47,10 +56,15 @@ function Nav(props) {
         ))}
 {/* ---------------------------------------------------------------------------- */}
         <li className={`mx-3 ${contactSelected && 'navActive'}`}>
-          <span onClick={() => setContactSelected(true)}>Contact</span>
+          <span onClick={() => {
+                setPortfolioSelected(false);
+                setContactSelected(true);
+                setAboutDefault(false);
+            }
+            }>Contact</span>
         </li>
         <li className="mx-3">
-          <span>Resume</span>
+          <span><a href='https://drive.google.com/file/d/1gYSIcnG5Y0EW7_m8ah1DeJ7SscU7NEBw/view?usp=sharing' target="blank">Resume</a></span>
         </li>
     </ul>
   </nav>
