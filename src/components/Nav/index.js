@@ -14,44 +14,49 @@ function renderResume () {
 }
 
 function Nav() {
+
+  const categories = [
+    {
+      name: "productivity apps",
+      description: "A few examples of recent apps that I've built, fully functional and guaranteed to boost your productivity.",
+    },
+    { name: "miscellaneous apps", 
+    description: "A few examples of recent apps that have enjoyment and convenience as the main focus, fully functional and built form scratch" }
+  ];
+
   return (
-    <header>
-      <h2>
-        <a href="/">
-          <span> My Portfolio </span> 
+<header>
+  <h2>
+    <a href="/">
+      My Portfolio
+    </a>
+  </h2>
+  <nav>
+    <ul className="flex-row">
+      <li className="mx-2">
+        <a href="#about">
+          About Me
         </a>
-      </h2>
-      <nav>
-        <ul className="flex-row">
-          <li className="mx-2">
-            <span><a href="#about">
-              About me
-            </a></span>
-          </li>
-          <li className="mx-2">
-            <span onClick={renderPortfolio}>
-              <a href="#portfolio">
-              Portfolio
-              </a>
-            </span>
-          </li>
-          <li className="mx-2">
-            <span onClick={renderContact}>
-              <a href="#contact">
-              Contact
-              </a>
-            </span>
-          </li>
-          <li className="mx-2">
-            <span onClick={renderResume}>
-              <a href="#resume">
-              Resume
-              </a>
-            </span>
-          </li>
-        </ul>
-      </nav>
-    </header>
+      </li>
+       {categories.map((category) => (
+        <li
+          className="mx-1"
+          key={category.name}
+        >
+          <span>
+            {category.name}
+          </span>
+        </li>
+      ))}
+        <li>
+          <span>Contact</span>
+        </li>
+        <li>
+          <span>Resume</span>
+        </li>
+    </ul>
+  </nav>
+</header>
   );
 }
 

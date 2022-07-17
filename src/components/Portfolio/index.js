@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import projectImg0 from '../../assets/projects/0.png'
-import projectImg1 from '../../assets/projects/1.png'
-import projectImg2 from '../../assets/projects/2.png'
-import projectImg3 from '../../assets/projects/3.png'
+// import projectImg0 from '../../assets/projects/0.png'
+// import projectImg1 from '../../assets/projects/1.png'
+// import projectImg2 from '../../assets/projects/2.png'
+// import projectImg3 from '../../assets/projects/3.png'
 
 function Portfolio() {
 
@@ -41,13 +41,9 @@ function Portfolio() {
 
   return (
     <section>
-      <h1>My Portfolio</h1>
+      <h1>Apps</h1>
       <p>Some examples of my most recent projects</p>
-      <img 
-      src={projectImg0}
-      alt='example of a project'
-      className="img-thumbnail mx-1 w-25"
-      />
+      <img />
     </section>
   );
 }
