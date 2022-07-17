@@ -9,7 +9,14 @@ import Nav from './components/Nav';
 import Portfolio from './components/Portfolio';
 import ContactForm from './components/Contact';
 
+
+
+
 function App() {
+
+  //hook for converting app into an SPA
+  const [contactSelected, setContactSelected] = useState(false);
+
 
   const [categories] = useState([
     {
@@ -30,9 +37,18 @@ function App() {
         currentCategory={currentCategory}
       ></Nav>
       <main>
-        <ContactForm></ContactForm>
-        <Portfolio currentCategory={currentCategory}></Portfolio>
-        <About></About>
+
+        {!contactSelected ? (
+          <>
+            <Portfolio currentCategory={currentCategory}></Portfolio>
+            <About></About>
+          </>
+        ) : (
+          <ContactForm></ContactForm>
+        )}
+
+
+
       </main>
     </div>
   );
