@@ -1,5 +1,5 @@
 import React from 'react';
-import { capitalizeFirstLetter } from '../../utils/helpes';
+import { capitalizeFirstLetter } from '../../utils/helpers';
 import projectImage from '../../assets/miscellaneous/2.png';
 
 function Portfolio(props) {
