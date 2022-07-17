@@ -1,5 +1,6 @@
 import React from 'react';
-import { capitalizeFirstLetter } from '../../utils/helpes'
+import { capitalizeFirstLetter } from '../../utils/helpes';
+import projectImage from '../../assets/miscellaneous/2.png';
 
 function Portfolio(props) {
 
@@ -45,7 +46,13 @@ function Portfolio(props) {
     <section>
       <h1>{capitalizeFirstLetter(currentCategory.name)}</h1>
       <p>{currentCategory.description}</p>
-      <img />
+      <div className="flex-row">
+          <img
+            src={projectImage}
+            alt="Commercial Example"
+            className="img-thumbnail mx-1"
+          />
+      </div>
     </section>
   );
 }
