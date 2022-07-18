@@ -1,5 +1,5 @@
 import React from 'react';
-import ExampleList from '../ExampleList';
+import Project from '../Project';
 import { capitalizeFirstLetter } from '../../utils/helpers';
 
 function Portfolio(props) {
@@ -8,7 +8,7 @@ function Portfolio(props) {
     <section>
       <h1 data-testid='portfolio-title'>{capitalizeFirstLetter(currentCategory.name)}</h1>
       <p className='my-p-list'>{currentCategory.description}</p>
-      <ExampleList category={currentCategory.name} />
+      <Project category={currentCategory.name} />
     </section>
   );
 }

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-function ExampleList({ category }) {
+function Project({ category }) {
 
   const [exampleImages] = useState([
     {
@@ -88,4 +88,4 @@ function ExampleList({ category }) {
   )
 }
 
-export default ExampleList;
+export default Project;

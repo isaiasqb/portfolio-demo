@@ -22,9 +22,7 @@ function Nav(props) {
   return (
 <header>
   <h2>
-    <a href="/">
       My Portfolio
-    </a>
   </h2>
 
   <nav>
