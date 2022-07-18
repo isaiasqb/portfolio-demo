@@ -1,9 +1,9 @@
 {
+  "homepage": "http://isaiasqb.github.io/portfolio-demo",
   "name": "portfolio-demo",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "homepage": "http://isaias.qb.github.io/portfolio-demo",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^13.5.0",
