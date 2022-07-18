@@ -7,7 +7,7 @@ function Portfolio(props) {
   return (
     <section>
       <h1 data-testid='portfolio-title'>{capitalizeFirstLetter(currentCategory.name)}</h1>
-      <p>{currentCategory.description}</p>
+      <p className='my-p-list'>{currentCategory.description}</p>
       <ExampleList category={currentCategory.name} />
     </section>
   );

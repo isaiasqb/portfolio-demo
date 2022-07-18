@@ -194,6 +194,10 @@ textarea {
   justify-content: space-between;
 }
 
+.space-around {
+  justify-content: space-around;
+}
+
 .flex-end {
   justify-content: flex-end;
 }
@@ -221,6 +225,14 @@ textarea {
 .my-5 {
   margin-top: var(--spacing-five);
   margin-bottom: var(--spacing-five);
+}
+
+.my-p-7 {
+  margin-bottom: 7em;
+}
+
+.my-p-2 {
+  margin-bottom: 2em;
 }
 
 .px-1 {
@@ -305,4 +317,23 @@ a {
 
 .navActive {
   color: var(--secondary);
+}
+
+.m-auto {
+  margin: auto;
+}
+
+.w40 {
+  width: 40vw;
+}
+
+.avatar{
+    width: 30%;
+    height: 30%;
+    border-radius: 40%;;
+}
+
+.description-p{
+  font-weight: 100;
+  margin-top: 1.2em;
 }
